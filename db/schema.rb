@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_18_134212) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_18_193813) do
+  create_table "audits", id: :uuid, charset: "utf8mb4", force: :cascade do |t|
+    t.string "auditable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "people", id: :uuid, charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
